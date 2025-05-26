@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>College Event Management</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(45deg, #292dee, #df80f4);
+      color: white;
+      padding: 1rem 0;
+    }
+
+    .card {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
+      border-radius: 1rem;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .btn-custom {
+      transition: 0.3s;
+    }
+
+    .btn-custom:hover {
+      transform: translateY(-3px);
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 60%;
+      height: 4px;
+      background-color: #8f94fb;
+      margin: 0.5rem auto 1rem;
+      border-radius: 5px;
+    }
+
+    footer {
+      background-color: #343a40;
+      color: white;
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">🎓 BGI Events</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#login">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#adminModal">Admin</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="text-center animate__animated animate__fadeInDown">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Welcome to BGI Event Portal</h1>
+      <p class="lead">Explore your college events beautifully!</p>
+      <button class="btn btn-warning mt-3 btn-lg btn-custom" data-bs-toggle="modal" data-bs-target="#eventDetailsModal">Check Events</button>
+    </div>
+  </header>
+
+  <!-- Image Gallery Section -->
+  <section id="gallery" class="py-5">
+    <div class="container text-center fade-in">
+      <h2 class="section-title">Event Images</h2>
+
+      <!-- First row of 5 images -->
+      <div class="row g-4 justify-content-center">
+        <div class="col-6 col-md-2"><div class="card"><img src="images/tech rangoli.avif" class="card-img-top" alt="Event 1"></div></div>
+        <div class="col-6 col-md-2"><div class="card"><img src="images/table tennis.jpg" class="card-img-top" alt="Event 2"></div></div>
+        <div class="col-6 col-md-2"><div class="card"><img src="images/adbc volly bal.jpg" class="card-img-top" alt="Event 3"></div></div>
+        <div class="col-6 col-md-2"><div class="card"><img src="images/cricket.avif" class="card-img-top" alt="Event 4"></div></div>
+        <div class="col-6 col-md-2"><div class="card"><img src="images/sdbc cricket.jpg" class="card-img-top" alt="Event 5"></div></div>
+        <div class="col-6 col-md-2"><div class="card"><img src="images/swimming.jpeg" class="card-img-top" alt="Event 5"></div></div>
+      </div>
+
+      <!-- Hidden second row -->
+      <div id="moreImages" class="row g-4 justify-content-center mt-4" style="display: none;">
+        <div class="col-6 col-md-2"><div class="card"><img src="images/sdbc atheletics.jpg" class="card-img-top" alt="Event 7"></div></div>
+        <div class="col-6 col-md-2"><div class="card"><img src="images/sdbc badminton.jpg" class="card-img-top" alt="Event 8"></div></div>
+        <div class="col-6 col-md-2"><div class="card"><img src="images/sport.jpg" class="card-img-top" alt="Event 9"></div></div>
+        <div class="col-6 col-md-2"><div class="card"><img src="images/sdbc football.jpg" class="card-img-top" alt="Event 10"></div></div>
+        <div class="col-6 col-md-2"><div class="card"><img src="images/sdbc cricket.jpg" class="card-img-top" alt="Event 11"></div></div>
+        <div class="col-6 col-md-2"><div class="card"><img src="images/sdbc foot.jpg" class="card-img-top" alt="Event 12"></div></div>
+        <div class="col-6 col-md-2"><div class="card"><img src="images/sdbc baskat ball.jpg" class="card-img-top" alt="Event 13"></div></div>
+        <div class="col-6 col-md-2"><div class="card"><img src="images/kabaddi.jpg" class="card-img-top" alt="Event 14"></div></div>
+        <div class="col-6 col-md-2"><div class="card"><img src="images/balls.jpeg" class="card-img-top" alt="Event 15"></div></div>
+        <div class="col-6 col-md-2"><div class="card"><img src="images/allsports.jpg" class="card-img-top" alt="Event 16"></div></div>
+      </div>
+
+      <!-- Show More Button -->
+      <div class="text-center mt-4">
+        <button class="btn btn-outline-primary btn-custom" onclick="toggleImages()">Show More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- JS for Show More -->
+  <script>
+    function toggleImages() {
+      const moreImages = document.getElementById('moreImages');
+      const button = event.target;
+      if (moreImages.style.display === "none") {
+        moreImages.style.display = "flex";
+        button.textContent = "Show Less";
+      } else {
+        moreImages.style.display = "none";
+        button.textContent = "Show More";
+      }
+    }
+  </script>
+
+   <!-- Event Details Modal -->
+<div class="modal fade" id="eventDetailsModal" tabindex="-1" aria-labelledby="eventDetailsLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content shadow-lg rounded-4">
+      <!-- Modal Header -->
+      <div class="modal-header text-white" style="background: linear-gradient(45deg, #6a11cb, #2575fc);">
+        <h5 class="modal-title fw-bold mx-auto" id="eventDetailsLabel">✨ Event Details ✨</h5>
+      </div>
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover text-center align-middle mx-auto" style="width: 90%;">
+            <thead class="table-dark">
+              <tr>
+                <th>Event Name</th>
+                <th>Coordinator</th>
+                <th>Contact Number</th>
+                <th>Last Date</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="eventTableBody">
+              <!-- JavaScript will populate rows here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Modal Footer -->
+      <div class="modal-footer bg-light">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Trigger Button -->
+<div class="text-center mt-5">
+  <a href="event.html" class="btn btn-lg btn-outline-primary me-3">🌐 Go to Event Page</a>
+  <a href="#" class="btn btn-lg btn-gradient" data-bs-toggle="modal" data-bs-target="#eventDetailsModal">🎉 Quick View Events 🎉</a>
+</div>
+
+
+<!-- Custom CSS -->
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f9f9f9;
+  }
+
+  .btn-gradient {
+    transition: all 0.3s ease;
+  }
+
+  .btn-gradient:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  .table-hover tbody tr:hover {
+    background-color: #e8f1ff !important;
+    color: #2575fc;
+    transform: scale(1.02);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .modal-content {
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  .modal-header {
+    animation: slideIn 0.6s ease-in-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .table-dark th {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+  }
+
+  .table {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-spacing: 10px;
+  }
+
+  tbody td {
+    padding: 1rem;
+  }
+
+  .modal-body {
+    padding: 2rem;
+  }
+</style>
+
+<!-- Custom JavaScript -->
+<script>
+  // Sample data
+  const events = [
+    { name: "Basketball Championship", coordinator: "Mr. Rahul Sharma", contact: "+91 9876543210", date: "20th April 2025" },
+    { name: "Cricket Tournament", coordinator: "Ms. Priya Singh", contact: "+91 8765432109", date: "22nd April 2025" },
+    { name: "Volleyball League", coordinator: "Mr. Akash Verma", contact: "+91 7654321098", date: "25th April 2025" },
+    { name: "Athletics Meet", coordinator: "Ms. Ritu Sharma", contact: "+91 6543210987", date: "28th April 2025" },
+    { name: "Chess Championship", coordinator: "Mr. Anand Gupta", contact: "+91 5432109876", date: "30th April 2025" },
+    { name: "Table Tennis", coordinator: "Ms. Neha Mehta", contact: "+91 4321098765", date: "5th May 2025" },
+    { name: "Badminton Tournament", coordinator: "Mr. Rohan Das", contact: "+91 3210987654", date: "10th May 2025" },
+    { name: "Football League", coordinator: "Ms. Sunita Patel", contact: "+91 2109876543", date: "15th May 2025" },
+    { name: "Swimming Gala", coordinator: "Mr. Arjun Kapoor", contact: "+91 1098765432", date: "20th May 2025" },
+    { name: "Marathon", coordinator: "Ms. Sneha Roy", contact: "+91 9988776655", date: "25th May 2025" },
+  ];
+
+  // Populate the table dynamically
+  const eventTableBody = document.getElementById("eventTableBody");
+  events.forEach(event => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${event.name}</td>
+      <td>${event.coordinator}</td>
+      <td>${event.contact}</td>
+      <td>${event.date}</td>
+      <td><button class="btn btn-primary btn-sm">Apply</button></td>
+    `;
+    eventTableBody.appendChild(row);
+  });
+</script>
+
+  <!-- Login Section -->
+  <section id="login" class="py-5 bg-light fade-in">
+    <div class="container">
+      <h2 class="text-center mb-4">Login</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <form>
+            <div class="mb-3"><input type="email" class="form-control" placeholder="Email/Number"></div>
+            <div class="mb-3"><input type="password" class="form-control" placeholder="Password"></div>
+            <button class="btn btn-primary w-100 btn-custom">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sign Up Modal -->
+  <div class="modal fade" id="signupModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content p-3">
+        <div class="modal-header">
+          <h5 class="modal-title">Create Account</h5>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="mb-3"><input type="text" class="form-control" placeholder="Full Name"></div>
+            <div class="mb-3"><input type="email" class="form-control" placeholder="Email"></div>
+            <div class="mb-3"><input type="password" class="form-control" placeholder="Password"></div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-success w-100 btn-custom">Sign Up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Modal -->
+  <div class="modal fade" id="adminModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content p-3">
+        <div class="modal-header">
+          <h5 class="modal-title">Admin Panel</h5>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="mb-3"><input type="text" class="form-control" placeholder="Event Name"></div>
+            <div class="mb-3"><input type="date" class="form-control"></div>
+            <div class="mb-3"><textarea class="form-control" placeholder="Event Description"></textarea></div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-success w-100 btn-custom">Create Event</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center py-4 mt-5">
+    <p class="mb-0">&copy;College Events | Designed with Aniket</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
